@@ -5,7 +5,6 @@ from langcodes import Language
 
 app = Flask(__name__)
 
-print("test")
 
 @app.route('/heartbeat', methods=['GET'])
 def heartbeat():
