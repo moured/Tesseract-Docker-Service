@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    container_name: tesseract-ocr
+    build: .
+    ports:
+     - "5001:5000"
+    volumes:
+      - .:/app
