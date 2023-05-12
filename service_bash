@@ -12,7 +12,8 @@ COMPOSE_FILE="$LOCAL_PATH/docker-compose.yml"
 cd $LOCAL_PATH
 while true
 do
-    if git diff --quiet HEAD origin/main; then
+    git fetch origin
+    if git diff-index --quiet HEAD origin/main; then
         echo "No changes detected in Git repository."
     else
         echo "Changes detected in Git repository, updating container..."
