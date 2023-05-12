@@ -9,15 +9,15 @@ LOCAL_PATH="/home/omoured/Desktop/Tesseract-Docker-Service"
 COMPOSE_FILE="$LOCAL_PATH/docker-compose.yml"
 
 # Monitor the repository for updates and update the service
+cd $LOCAL_PATH
 while true
 do
-    cd $LOCAL_PATH
-    git reset --hard HEAD
-    git pull origin main
     if git diff-index --quiet HEAD --; then
         echo "No changes detected in Git repository."
     else
         echo "Changes detected in Git repository, updating container..."
+        git reset --hard HEAD
+        git pull origin main
         sudo docker-compose -f $COMPOSE_FILE down > /home/omoured/Desktop/Tesseract-Docker-Service/docker_down.log
         sudo docker-compose -f $COMPOSE_FILE up -d > /home/omoured/Desktop/Tesseract-Docker-Service/docker_up.log
     fi
