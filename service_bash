@@ -1,22 +1,12 @@
 #!/bin/bash
 
 # Define the GitHub repository URL and the local path for cloning
-REPO_URL="https://accgitlab.access.kit.edu/Maximilian2/Tesseract-OCR-Webservice.git" 
-LOCAL_PATH="/home/omoured/Downloads/OCR_Service/tesseract"
-
-# Define the service name and image name
-SERVICE_NAME="tesseract_ocr_updater"
-IMAGE_NAME="tesseract_v2"
-
-# Clone the repository to the local path
-git clone $REPO_URL $LOCAL_PATH
+REPO_URL= "https://github.com/moured/Tesseract-Docker-Service.git"
+# "https://accgitlab.access.kit.edu/Maximilian2/Tesseract-OCR-Webservice.git" 
+LOCAL_PATH="/home/omoured/Desktop/Tesseract-Docker-Service"
 
 # Define the Docker Compose file path
 COMPOSE_FILE="$LOCAL_PATH/docker-compose.yml"
-
-# Build the Docker image
-# docker build -t $IMAGE_NAME $LOCAL_PATH
-docker-compose -f $COMPOSE_FILE up -d
 
 # Monitor the repository for updates and update the service
 while true
