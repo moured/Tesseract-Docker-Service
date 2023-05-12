@@ -18,8 +18,8 @@ do
         echo "No changes detected in Git repository."
     else
         echo "Changes detected in Git repository, updating container..."
-        sudo docker-compose -f $COMPOSE_FILE down > docker_down.log
-        sudo docker-compose -f $COMPOSE_FILE up -d > docker_up.log
+        sudo docker-compose -f $COMPOSE_FILE down > /home/omoured/Desktop/Tesseract-Docker-Service/docker_down.log
+        sudo docker-compose -f $COMPOSE_FILE up -d > /home/omoured/Desktop/Tesseract-Docker-Service/docker_up.log
     fi
     sleep 5 # 10 minutes
 done
