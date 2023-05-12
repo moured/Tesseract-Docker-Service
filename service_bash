@@ -18,9 +18,9 @@ do
         echo "No changes detected in Git repository."
     else
         echo "Changes detected in Git repository, updating container..."
-        docker-compose -f $COMPOSE_FILE down
-        docker-compose -f $COMPOSE_FILE build
-        docker-compose -f $COMPOSE_FILE up -d
+        sudo docker-compose -f $COMPOSE_FILE down
+        sudo docker-compose -f $COMPOSE_FILE build
+        sudo docker-compose -f $COMPOSE_FILE up -d
     fi
     sleep 5 # 10 minutes
 done
