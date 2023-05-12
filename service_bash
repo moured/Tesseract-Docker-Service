@@ -12,15 +12,16 @@ COMPOSE_FILE="$LOCAL_PATH/docker-compose.yml"
 cd $LOCAL_PATH
 while true
 do
-    git fetch origin
-    if git diff-index --quiet HEAD origin/main; then
+    if git fetch origin; then
         echo "No changes detected in Git repository."
     else
         echo "Changes detected in Git repository, updating container..."
         git reset --hard HEAD
         git pull origin main
-        sudo docker-compose -f $COMPOSE_FILE down > /home/omoured/Desktop/Tesseract-Docker-Service/docker_down.log
-        sudo docker-compose -f $COMPOSE_FILE up -d > /home/omoured/Desktop/Tesseract-Docker-Service/docker_up.log
+        docker-compose -f $COMPOSE_FILE down 
+        # > /home/omoured/Desktop/Tesseract-Docker-Service/docker_down.log
+        docker-compose -f $COMPOSE_FILE up -d
+        # > /home/omoured/Desktop/Tesseract-Docker-Service/docker_up.log
     fi
     sleep 5 # 10 minutes
 done
