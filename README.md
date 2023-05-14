@@ -7,6 +7,7 @@ sudo systemctl start ocr_updater.service
 sudo systemctl enable ocr_updater.service
 journalctl -u ocr_updater.service -n 50 -f
 sudo systemctl status ..
+sudo systemctl disable <service-name>
 ```
 
 ```
