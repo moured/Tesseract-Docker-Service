@@ -1,0 +1,10 @@
+[Unit]
+Description=EasyOCR Container Updater
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /home/dev/docker-www/service_bash/easyocr_service_updater
+User=om2022
+
+[Install]
+WantedBy=multi-user.target
